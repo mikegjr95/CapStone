@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication1.Models.RepairOrder>
+
+@{
+    ViewBag.Title = "DamagePicture";
+}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+<link rel="stylesheet" href="~/Scripts/Icons.css">
+<h2>DamagePicture</h2>
+@if (User.IsInRole("Mechanic"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeforePicture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AfterPicture)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleNumber)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.BeforePicture)" style= height: 135px;" width="450"/>
+            </td>
+
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.AfterPicture)" style= height: 135px;" width="450" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,91 @@
+﻿@model IEnumerable<WebApplication1.Models.RepairOrder>
+
+@{
+    ViewBag.Title = "PartsAndLabor";
+}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+
+<h4>Parts and Labor</h4>
+<br />
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleNumber)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.StatedIssues)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PartsList)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PartsCost)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.LaborTotal)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.LaborCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+
+
+    </tr>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.VehicleNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StatedIssues)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.PartsList)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PartsCost)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.LaborTotal)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.LaborCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+</tr>
+    }
+    </table>
+@if (User.IsInRole("Mechanic"))
+{
+    <p>
+        @Html.ActionLink("Back to Repair Orders", "Index")||
+        @Html.ActionLink("View Photos", "DamagePicture")
+    </p>
+}
+@if (User.IsInRole("Customer"))
+{
+    <p>
+        @Html.ActionLink("Back to Repair Order", "Index", "RepairOrders")||
+        @Html.ActionLink("Damage Photos", "DamagePicture")
+    </p>
+}

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "WelcomeC";
+}
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<h2>
+    Welcome<strong>@ViewBag.Name!</strong> Thank you for signing up with Wrench It!
+    I see your a Customer! Thank you for choosing the number one Foreign Automotive/Motorsport
+    repair shop in the World! Please <a class="btn btn-outline-success" @Html.ActionLink("Click Here!", "Create", "Customers")</a> to get started scheduleing your
+    appointments, staying in touch with your tech, updating extra needed info and MORE!
+</h2>
+

@@ -1,0 +1,125 @@
+﻿@model WebApplication1.Models.Shop
+@{
+    ViewBag.Title = "ShopOne";
+}
+
+<h2>McLaren</h2>
+<link rel="stylesheet" href="~/Content/main.css" />
+<html>
+<head>
+    <title>nope</title>
+    <link rel="stylesheet" href="~/Scripts/style.min.css">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <!-- Banner -->
+
+    <section id="bannerOne">
+        <div class="inner">
+            <header>
+                <h1>Welcome To McLaren</h1>
+                <p>Dont aim for "Good". Aim for the Best</p>
+                <div>@Html.DisplayNameFor(model => model.StateMc) : @Html.DisplayFor(model => model.StateMc)</div>
+                <div>@Html.DisplayNameFor(model => model.ZipMc) : @Html.DisplayFor(model => model.ZipMc)</div>
+                <div>@Html.DisplayNameFor(model => model.StreetMc) : @Html.DisplayFor(model => model.StreetMc)</div>
+            </header>
+            <br />
+            <a href="#main" class="button big scrolly">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Section -->
+        <section class="wrapper style2">
+            <div class="inner">
+                <!-- 2 Columns -->
+                <div class="flex flex-2">
+                    <div class="col col1">
+                        <div class="image round fit">
+                            <a href="generic.html" class="link"><img src="~/Content/McLaren02.jpg" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="col col2">
+                        <h3>Quality built in and out</h3>
+                        <p>vrrooom vrrrom vrrroooo o ororo oro ro oror mmrororor oro rom ormor m orm</p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section -->
+        <section class="wrapper style1">
+            <div class="inner">
+                <div class="flex flex-2">
+                    <div class="col col2">
+                        <h3>High Perfromance</h3>
+                        <p>vrrooom vrrrom vrrroooo o ororo oro ro oror mmrororor oro rom ormor m orm</p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                    <div class="col col1 first">
+                        <div class="image round fit">
+                            <a href="generic.html" class="link"><img src="~/Content/McLaren03.jpg" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section -->
+        <section class="wrapper style2">
+            <div class="inner">
+                <header class="align-center">
+                    <h2>Whats going on at Mclaren!</h2>
+                    <p>Check out our activity</p>
+                </header>
+                <div class="flex flex-3">
+                    <div class="col align-center">
+                        <div class="image round fit">
+                            <img src="~/Content/Work.jpg" alt="" />
+                        </div>
+                        <h1>Todays Orders</h1>
+                        <p>21 </p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                    <div class="col align-center">
+                        <div class="image round fit">
+                            <img src="~/Content/HRate.png" alt="" />
+                        </div>
+                        <h1>Hourly Rate</h1>
+                        <p>159.99</p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                    <div class="col align-center">
+                        <div class="image round fit">
+                            <img src="~/Content/Meter.jpg" alt="" />
+                        </div>
+                        <h1>Todays WorkLoad</h1>
+                        <p>Heavy</p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Footer -->
+    <!-- Scripts -->
+    @*<script src="~/Scripts/ShopScript/jquery.min.js"></script>
+        <script src="~/Scripts/ShopScript/jquery.scrolly.min.js"></script>
+        <script src="~/Scripts/ShopScript/jquery.scrollex.min.js"></script>
+        <script src="~/Scripts/ShopScript/skel.min.js"></script>
+        <script src="~/Scripts/ShopScript/util.js"></script>
+        <script src="~/Scripts/ShopScript/main.js"></script>*@
+
+</body>
+
+
+</html>

@@ -1,0 +1,47 @@
+﻿@model WebApplication1.Models.RepairOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+<link href="~/Content/site.css" rel="stylesheet" />
+
+<h2>Details</h2>
+
+<div>
+    <h4>RepairOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RepairDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepairDate)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Back to Repairs", "Index")||
+    @Html.ActionLink("Parts and labor totals", "PartsAndLabor")
+</p>

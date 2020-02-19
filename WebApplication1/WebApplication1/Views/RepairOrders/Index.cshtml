@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplication1.Models.RepairOrder>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+<link href="~/Content/MechanicChart.css" rel="stylesheet" />
+@if (User.IsInRole("Mechanic"))
+{
+    <h2>Customer Repair Orders</h2>
+}
+@if (User.IsInRole("Customer"))
+{
+    <h2>Repair Order</h2>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RepairDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complete)
+        </th>
+        <th></th>
+    </tr>
+    @*<tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+            </td>
+        </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepairDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complete)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @if (User.IsInRole("Mechanic"))
+                {
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.OrderId })||
+                        @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+                    </p>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+
+@if (User.IsInRole("Mechanic"))
+{
+<body class="chart">
+    <h1>Parts & Labor Comparison</h1>
+    <div class="bar">
+        <section id="green" style="width: 11.701%">Labor</section>
+        <section id="blue" style="width: 30.7279%">Parts</section>
+        @*<section id="yellow" style="width: 16.0294%">Yellow</section>
+        <section id="red">Red</section>*@
+    </div>
+</body>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")||
+        @Html.ActionLink("Parts and labor totals", "PartsAndLabor")
+    </p>
+}
+
+@if (User.IsInRole("Customer"))
+{
+    <p>
+        @Html.ActionLink("Parts and Labor totals", "PartsAndLabor")
+    </p>
+}

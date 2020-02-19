@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApplication1.Models.Shop>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+<h2>Index</h2>
+<br />
+<br />
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetMc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipMc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateMc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateM)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ZipP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StateP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetMc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ZipMc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StateMc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ZipM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StateM)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ShopId }) ||
+        @Html.ActionLink("Details", "Details", new { id = item.ShopId }) 
+        @*@Html.ActionLink("Delete", "Delete", new { id = item.ShopId })*@
+    </td>
+</tr>
+    }
+
+</table>

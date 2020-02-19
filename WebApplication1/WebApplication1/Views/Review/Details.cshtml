@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.Models.Review>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="~/Scripts/styles-merged.css">
+<link rel="stylesheet" href="~/Scripts/style.min.css">
+
+<!DOCTYPE html>
+<br />
+<br />
+<br />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FeedBack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.From)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePosted)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FeedBack)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatePosted)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    @if (User.IsInRole("Customer"))
+    {
+        @Html.ActionLink("Back", "Index", "Mechanics")
+    }
+    @if (User.IsInRole("Mechanic"))
+    {
+        @Html.ActionLink("Back", "Index", "Mechanic")
+    }
+</body>
+</html>

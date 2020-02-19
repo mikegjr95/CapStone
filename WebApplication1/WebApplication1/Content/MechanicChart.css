@@ -1,0 +1,44 @@
+﻿.chart{
+    padding: 40px 0 0 0;
+    font-family: sans-serif;
+}
+
+.bar {
+    height: 30px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+    .bar section {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: white;
+    }
+
+        .bar section:last-of-type {
+            flex: auto;
+        }
+
+#green {
+    background: #65d260;
+}
+
+#blue {
+    background: #45afd9;
+}
+
+#yellow {
+    background: #f6b50a;
+}
+
+#red {
+    background: #f54954;
+}
+
+
+
+
